@@ -1,0 +1,118 @@
+* {
+  box-sizing: border-box;
+}
+
+.chat-main {
+  height: 100vh;
+  width: calc(100% - 300px);
+  float: right;
+  background-color: $white;
+  .main-header {
+    height: 100px;
+    background-color: $white;
+    border-bottom: 1px solid;
+    border-color: #eeeeee;
+    padding: 0 40px;
+    .left-box {
+      height: 100%;
+      float: left;
+      font-size: 20px;
+      color: #333333;
+      padding-top: 35px;
+      &__group-name {
+        margin-bottom: 15px;
+      }
+      &__members {
+        color: #999999;
+        font-size: 12px;
+        padding-bottom: 0px;
+        &__member {
+          display: inline;
+        }
+      }
+    }
+    a {
+      float: right;
+      height: 40px;
+      width: 72px;
+      margin-top: 28px;
+      border: solid 1px;
+      text-decoration: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 16px;
+      color: $light_blue;
+    }
+  }
+  .messages {
+    height: calc(100% - 100px - 90px);
+    width: 100%;
+    background-color: #fafafa;
+    padding: 35px 40px;
+    .message {
+      padding-bottom: 46px;
+      &__upper {
+        margin-bottom: 12px;
+        display: flex;
+        justify-content: flex-start;
+        &__name {
+          color: #333333;
+          font-size: 16px;
+          font-weight: bold;
+          display: block;
+        }
+        &__date {
+          color: #999999;
+          font-size: 12px;
+          display: block;
+          margin-left: 10px;
+        }
+      }
+      &__text {
+        color: #434a54;
+        font-size: 14px;
+      }
+    }
+  }
+  .form {
+    height: 90px;
+    width: 100%;
+    background-color: #d2d2d2;
+    padding: 20px 40px;
+    margin: 0;
+    form {
+      display: flex;
+      .input-box {
+        height: 50px;
+        width: 100%;
+        display: flex;
+        position: relative;
+        &__text {
+          padding: 0 45px 0 10px;
+          height: 100%;
+          width: 100%;
+          border: 0px;
+        }
+        &__image-box{
+          position: absolute;
+          right: 10px;
+          .far {
+            font-size: 2.8ex;
+            line-height: 50px;
+            cursor: pointer;
+          }
+          .hidden {
+            display: none;
+          }
+        }
+      }
+      .send-btn {
+        color: $white;
+        background-color: $light_blue;
+        padding: 0 30px;
+        margin-left: 15px;
+      }
+    }
+  }
+}
