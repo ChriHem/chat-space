@@ -9,10 +9,10 @@
         = link_to edit_user_path(current_user.id), class: "cog-icon" do
           = icon('fas', 'cog')
   .groups
-    - current_user.groups.each do |group|
+    - current_user.groups.includes(:messages).each do |group|
       .group
-        = link_to '#' do
+        = link_to group_messages_path(group) do
           %p.group__name
             = group.name
           %p.group__message
-            まだメッセージがありません
+            = group.show_last_message
