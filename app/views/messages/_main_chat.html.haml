@@ -2,48 +2,23 @@
   .main-header
     .left-box
       %h2.left-box__group-name
-        test
+        = @group.name
       %ul.left-box__members
         Member：
         %li.left-box__members__member
-          name
-        %li.left-box__members__member
-          メンバー
-        %li.left-box__members__member
-          メンバー
-    = link_to "localhost:3000/groups/2/edit", class: "edit-btn" do
+          - @group.users.each do |user|
+            = user.name
+    = link_to edit_group_path(@group), class: "edit-btn" do
       Edit
+    
   .messages
-    .message
-      .message__upper
-        .message__upper__name
-          name
-        .message__upper__date
-          2020/05/22(Fri)
-      .message__text
-        美味しい
-    .message
-      .message__upper
-        .message__upper__name
-          name
-        .message__upper__date
-          2020/05/22(Fri)
-      .message__text
-        美味しい
-    .message
-      .message__upper
-        .message__upper__name
-          name
-        .message__upper__date
-          2020/05/22(Fri)
-      .message__text
-        美味しい
-  .form
-    %form
-      .input-box
-        %input.input-box__text{ type: "text", placeholder: "type a message"}
-        %label.input-box__image-box
-          = icon('far', 'image')
-          %input.hidden{ type: "file" }
-      %input.send-btn{ type:"submit", value: "Send" }
+    = render @messages
 
+  .form
+    = form_for [@group, @message] do |f|
+      .input-box
+        = f.text_field :content, class: 'input-box__text', placeholder: 'type a message'
+        = f.label :image, class: 'input-box__image-box' do
+          = icon('far', 'image')
+          = f.file_field :image, class: 'hidden'
+        = f.submit 'Send', class: 'send-btn'

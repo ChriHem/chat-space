@@ -215,7 +215,7 @@ PLATFORMS
 
 DEPENDENCIES
   byebug
-  carrierwave (~> 2.0)
+  carrierwave
   coffee-rails (~> 4.2)
   devise
   font-awesome-sass
@@ -223,6 +223,7 @@ DEPENDENCIES
   jbuilder (~> 2.5)
   jquery-rails
   listen (~> 3.0.5)
+  mini_magick
   mysql2 (>= 0.3.18, < 0.6.0)
   pry-rails
   puma (~> 3.0)
