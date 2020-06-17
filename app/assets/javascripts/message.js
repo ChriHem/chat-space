@@ -52,10 +52,11 @@ $(function(){
       $('.messages').append(html);
       $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight});
       $('form')[0].reset();
-      $('.send-btn').removeAttr('disabled');
     })
     .fail(function(){
       alert("メッセージ送信に失敗しました");
+    })
+    .always(function(){
       $('.send-btn').removeAttr('disabled');
     })
   });
