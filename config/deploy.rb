@@ -9,7 +9,7 @@ set :rbenv_type, :user
 set :rbenv_ruby, '2.5.1'
 
 set :ssh_options, auth_methods: ['publickey'],
-                  keys: ['/Users/chrihem/.ssh/deploy.pem'] 
+                  keys: ['~/.ssh/deploy.pem'] 
 
 set :unicorn_pid, -> { "#{shared_path}/tmp/pids/unicorn.pid" }
 
